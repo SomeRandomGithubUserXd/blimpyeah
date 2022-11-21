@@ -36,6 +36,10 @@ Route::group(['prefix' => 'blimp', 'as' => 'blimp.'], function () {
     Route::post('/stop', [BlimpYeahSoundsController::class, 'stop'])->name('stop');
 });
 
+Route::get("/sound", function () {
+    return response()->file(public_path("sound.wav"));
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
