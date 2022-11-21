@@ -32,7 +32,7 @@ const stopBlimp = () => {
     <div
         class="relative flex flex-col items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0 text-center px-5">
         <img :class="blimpIsRunning ? 'running' : ''" class="blimpman-img mx-auto" :src="imageUrl"/>
-        <p class="text-white mt-5 text-2xl">{{ blimpIsRunning ? "Дирижопль начнется в течение минуты " : "Дирижабль неактивен(хуярь)" }}</p>
+        <p class="dark:text-white text-gray-900 mt-5 text-2xl">{{ blimpIsRunning ? "Дирижопль начнется в течение минуты " : "Дирижабль неактивен(хуярь)" }}</p>
         <button
             @click="handleButtonClick"
             type="button"
