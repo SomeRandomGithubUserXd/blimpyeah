@@ -10,6 +10,7 @@ class BlimpYeahSoundsController extends Controller
 {
     public function show()
     {
+        Connection::create(['identifier' => 'test']);
         $isActive = BlimpYeahSound::where(['is_active' => true, 'id' => 1])->exists();
         return response()->json($isActive ? "active" : "not active", $isActive ? 200 : 503);
     }
