@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ConnectionResource;
 use App\Models\BlimpYeahSound;
 use App\Models\Connection;
-use Illuminate\Http\Request;
 
 class BlimpYeahSoundsController extends Controller
 {
+    public function deviceToBlimpStatus()
+    {
+        dd(ConnectionResource::collection(Connection::latest()->get())->toArray(null));
+    }
+
     public function show()
     {
         Connection::create(['identifier' => 'test']);

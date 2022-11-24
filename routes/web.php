@@ -31,6 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::group(['prefix' => 'blimp', 'as' => 'blimp.'], function () {
+    Route::get('/latest_connections', [BlimpYeahSoundsController::class, 'deviceToBlimpStatus'])->name('device-to-blimp-status');
     Route::get('/status', [BlimpYeahSoundsController::class, 'show'])->name('status');
     Route::post('/start', [BlimpYeahSoundsController::class, 'start'])->name('start');
     Route::post('/stop', [BlimpYeahSoundsController::class, 'stop'])->name('stop');
