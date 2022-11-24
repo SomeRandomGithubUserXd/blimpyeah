@@ -10,7 +10,7 @@ class BlimpYeahSoundsController extends Controller
 {
     public function deviceToBlimpStatus()
     {
-        dd(ConnectionResource::collection(Connection::latest()->get())->toArray(null));
+        return "q";
     }
 
     public function show()
